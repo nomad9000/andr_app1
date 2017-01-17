@@ -2,6 +2,7 @@ package training.andr_app1;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,6 +11,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import org.w3c.dom.Text;
 
 import java.util.HashMap;
 
@@ -27,6 +30,7 @@ public class QuizActivity extends AppCompatActivity {
     private ImageButton mNextButton;
     private ImageButton mPreviousButton;
     private TextView mQuestionTextView;
+    private TextView mAPIVersionTextView;
     private boolean mIsCheater;
     private HashMap<Integer, Boolean> mCheatedQuestions = new HashMap<>();
 
@@ -52,6 +56,8 @@ public class QuizActivity extends AppCompatActivity {
         }
         setContentView(R.layout.activity_quiz);
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
+        mAPIVersionTextView = (TextView) findViewById(R.id.api_version_text_view);
+        mAPIVersionTextView.setText("API level " + String.valueOf(Build.VERSION.SDK_INT));
         mTrueButton = (Button) findViewById(R.id.true_button);
         mFalseButton = (Button) findViewById(R.id.false_button);
         mCheatButton = (Button) findViewById(R.id.cheat_button);
