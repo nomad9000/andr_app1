@@ -57,7 +57,7 @@ public class QuizActivity extends AppCompatActivity {
         setContentView(R.layout.activity_quiz);
         mQuestionTextView = (TextView) findViewById(R.id.question_text_view);
         mAPIVersionTextView = (TextView) findViewById(R.id.api_version_text_view);
-        mAPIVersionTextView.setText("API level " + String.valueOf(Build.VERSION.SDK_INT));
+        mAPIVersionTextView.setText(getString(R.string.api_version, String.valueOf(Build.VERSION.SDK_INT)));
         mTrueButton = (Button) findViewById(R.id.true_button);
         mFalseButton = (Button) findViewById(R.id.false_button);
         mCheatButton = (Button) findViewById(R.id.cheat_button);
